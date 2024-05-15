@@ -1,0 +1,19 @@
+{
+  "name": "pokedex_by_carloscordova.dev",
+  "version": "1.0.0",
+  "description": "pokemon project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev.git"
+  },
+  "author": "carloscordova.dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev/issues"
+  },
+  "homepage": "https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev#readme"
+}

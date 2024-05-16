@@ -1,18 +1,32 @@
-.pokemon-container{
- display: grid ;
-grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-gap: 2rem;
-  margin-top: 1rem;
+body{
+  background-color: red;
 }
 
-.pokemon-card{
+main{
+  margin: 5rem;
+  padding: 2rem;
+  background-color: lightgray;
+}
+
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+ 
+}
+
+
+
+.pokemon-card {
+ 
   display: flex;
-   flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
 }
-
 
 .hide {
   display: none;

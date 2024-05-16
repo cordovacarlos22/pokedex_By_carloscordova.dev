@@ -13,6 +13,7 @@ class Pokemon {
       data = await response.json();
       pokemons.push(data);
     }
+    console.log(pokemons);
     return pokemons;
   }
 }
@@ -23,9 +24,13 @@ addEventListener('load', async () => {
   let print = result.map((item) => {
     return `
       <div key=${item.id} class="pokemon-card">
-        <h1>${item.order}</h1>
+      <h1>#${item.order}</h1>
+      <img src="${item.sprites.front_default}" alt="${item.name}">
         <h2>${item.name}</h2>
-        <img src="${item.sprites.front_default}" alt="${item.name}">
+        <p>${item.stats[0].stat.name} ${item.stats[0].base_stat}</p>
+        <p>${item.stats[1].stat.name} ${item.stats[1].base_stat}</p>
+        <p>${item.stats[2].stat.name} ${item.stats[2].base_stat}</p>
+        <p>${item.stats[3].stat.name} ${item.stats[3].base_stat}</p>
         <p>${item.types[0].type.name}</p>
         <p>${item.height}</p>
         <p>${item.weight}</p>
@@ -43,9 +48,15 @@ addEventListener('load', async () => {
 
   let searchInput = document.querySelector('.pokemon-search');
 
+  /* This code snippet is adding an event listener to the `searchInput` element, which is an input
+  field for searching Pokémon. When the user types into the input field, the event listener triggers
+  a function that performs the following actions for each Pokémon in the `result` array: */
   searchInput.addEventListener("input", e => {
     const value = e.target.value.toLowerCase();
 
+   /* This code snippet is part of an event listener attached to an input field used for searching
+   Pokémon. When the user types into the input field, this event listener triggers a function that
+   iterates over each Pokémon in the `result` array. */
     result.forEach(pokemon => {
       const isVisible =
         pokemon.name.toLowerCase().includes(value) ||

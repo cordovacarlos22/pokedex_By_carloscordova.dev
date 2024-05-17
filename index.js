@@ -7,11 +7,15 @@ class Pokemon {
     let count = 0;
     let data;
     let pokemons = [];
-    for (let i = 0; i <= 150; i++) {
-      count++;
-      let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${count}`);
-      data = await response.json();
-      pokemons.push(data);
+    try {
+      for (let i = 0; i <= 150; i++) {
+        count++;
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${count}`);
+        data = await response.json();
+        pokemons.push(data);
+      }
+    } catch (error) {
+      console.error(error);
     }
     console.log(pokemons);
     return pokemons;
@@ -54,9 +58,9 @@ addEventListener('load', async () => {
   searchInput.addEventListener("input", e => {
     const value = e.target.value.toLowerCase();
 
-   /* This code snippet is part of an event listener attached to an input field used for searching
-   Pokémon. When the user types into the input field, this event listener triggers a function that
-   iterates over each Pokémon in the `result` array. */
+    /* This code snippet is part of an event listener attached to an input field used for searching
+    Pokémon. When the user types into the input field, this event listener triggers a function that
+    iterates over each Pokémon in the `result` array. */
     result.forEach(pokemon => {
       const isVisible =
         pokemon.name.toLowerCase().includes(value) ||

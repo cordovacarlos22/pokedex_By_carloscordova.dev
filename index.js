@@ -1,3 +1,5 @@
+/* The above class `Pokemon` fetches data for 150 Pokémon from the PokeAPI, displays their information
+on a webpage, and allows users to search for specific Pokémon. */
 class Pokemon {
   constructor(name) {
     this.name = name;

@@ -5,7 +5,7 @@
 }
 
 body {
- margin: 5rem;
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,21 +15,25 @@ body {
 }
 
 main {
-  
-  padding: 5rem;
+  margin: 5rem; 
+  padding: 5px;
   background-color: lightgray;
-  width: 100%;
+  align-items: center;
+
  
 }
 
 .pokemon-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
-  margin-top: 1rem;
+  
 }
 
 .pokemon-card {
+  min-width: 300px;
   position: relative;
   display: flex;
   flex-direction: column;

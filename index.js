@@ -47,6 +47,9 @@ addEventListener('load', async () => {
         <p>Type: ${item.types[0].type.name}</p>
         <p>Height: ${item.height}</p>
         <p>Weight: ${item.weight}</p>
+        <div class="pokemon_hover_stats">
+        <p>HP: ${item.stats[0].base_stat}</p>
+        </div>
       </div>
     `;
   }).join('');

@@ -33,24 +33,27 @@ main {
 }
 
 .pokemon-card {
-  min-width: 300px;
+  width: 300px;
+  height: 300px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 
 
 .pokemon_hover_stats {
-  
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   
 }
 
@@ -63,6 +66,12 @@ main {
   background-position: cover;
   
 
+}
+
+.stats_wrapper{
+
+  width: 50%;
+  background-color: white;
 }
 
 .hide {

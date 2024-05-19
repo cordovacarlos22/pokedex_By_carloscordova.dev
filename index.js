@@ -1,8 +1,21 @@
+/* The Pokemon class fetches data for 150 Pokémon from the PokeAPI asynchronously. */
 class Pokemon {
+  /**
+   * The above code snippet appears to be a constructor function in JavaScript that initializes an
+   * object with a 'name' property.
+   * @param name - The parameter "name" in the constructor function is used to accept a value that will
+   * be assigned to the "name" property of the object being created.
+   */
   constructor(name) {
     this.name = name;
   }
 
+  /**
+   * The function `getData` fetches data for 150 Pokémon from the PokeAPI and stores them in an array.
+   * @returns The `getData` function is returning an array of data for 150 Pokémon fetched from the
+   * PokeAPI. The array `pokemons` contains the data objects for each Pokémon, and this array is being
+   * returned by the function.
+   */
   async getData() {
     let count = 0;
     let data;
@@ -18,6 +31,8 @@ class Pokemon {
       console.error(error);
     }
     console.log(pokemons);
+   /* The `return pokemons;` statement in the `getData` method of the `Pokemon` class is used to return
+   the array `pokemons` containing the data objects for 150 Pokémon fetched from the PokeAPI. */
     return pokemons;
   }
 }
@@ -61,16 +76,20 @@ complete, indicating that the loading process has finished and the content is re
         <h1>#${item.order}</h1>
         <img src="${item.sprites.front_default}" alt="${item.name}">
         <h2>${item.name}</h2>
+        
+        <p>Type: ${item.types[0].type.name}</p>
+    
+        <div  hide class="pokemon_hover_stats hide">
+            <div class="stats_wrapper">
+                 <p>HP: ${item.stats[0].base_stat}</p>
+        <p>HP: ${item.stats[0].base_stat}</p><img src="${item.sprites.front_default}" alt="${item.name}">
         <p>${item.stats[0].stat.name}: ${item.stats[0].base_stat}</p>
         <p>${item.stats[1].stat.name}: ${item.stats[1].base_stat}</p>
         <p>${item.stats[2].stat.name}: ${item.stats[2].base_stat}</p>
         <p>${item.stats[3].stat.name}: ${item.stats[3].base_stat}</p>
-        <p>Type: ${item.types[0].type.name}</p>
-        <p>Height: ${item.height}</p>
+            <p>Height: ${item.height}</p>
         <p>Weight: ${item.weight}</p>
-        <div  hide class="pokemon_hover_stats hide">
-        <p>HP: ${item.stats[0].base_stat}</p>
-        <p>HP: ${item.stats[0].base_stat}</p><img src="${item.sprites.front_default}" alt="${item.name}">
+          </div>
         </div>
       </div>
     `;

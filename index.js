@@ -31,8 +31,8 @@ class Pokemon {
       console.error(error);
     }
     console.log(pokemons);
-   /* The `return pokemons;` statement in the `getData` method of the `Pokemon` class is used to return
-   the array `pokemons` containing the data objects for 150 Pokémon fetched from the PokeAPI. */
+    /* The `return pokemons;` statement in the `getData` method of the `Pokemon` class is used to return
+    the array `pokemons` containing the data objects for 150 Pokémon fetched from the PokeAPI. */
     return pokemons;
   }
 }
@@ -41,29 +41,29 @@ addEventListener('load', async () => {
   const loadingElement = document.querySelector('.loading');
   const pokemonContainer = document.querySelector('.pokemon-container');
 
-/* The code snippet `loadingElement.classList.remove('hide');` is showing a loading message on the
-webpage. It is targeting an HTML element with the class "loading" and removing the "hide" class from
-it. This action makes the loading message visible to the user by displaying the element that was
-initially hidden using the "hide" class. */
+  /* The code snippet `loadingElement.classList.remove('hide');` is showing a loading message on the
+  webpage. It is targeting an HTML element with the class "loading" and removing the "hide" class from
+  it. This action makes the loading message visible to the user by displaying the element that was
+  initially hidden using the "hide" class. */
   // Show loading message
   loadingElement.classList.remove('hide');
 
- /* `const pokemon = new Pokemon();` is creating a new instance of the `Pokemon` class. This line of
- code initializes a new object named `pokemon` based on the `Pokemon` class constructor. The
- `Pokemon` class defines properties and methods that can be accessed and used by this newly created
- object. This instance can then be used to call methods and access properties defined within the
- `Pokemon` class, such as the `getData` method in this case. */
+  /* `const pokemon = new Pokemon();` is creating a new instance of the `Pokemon` class. This line of
+  code initializes a new object named `pokemon` based on the `Pokemon` class constructor. The
+  `Pokemon` class defines properties and methods that can be accessed and used by this newly created
+  object. This instance can then be used to call methods and access properties defined within the
+  `Pokemon` class, such as the `getData` method in this case. */
   const pokemon = new Pokemon();
 
- /* `let result = await pokemon.getData();` is calling the `getData` method asynchronously on the
- `pokemon` object. */
+  /* `let result = await pokemon.getData();` is calling the `getData` method asynchronously on the
+  `pokemon` object. */
   let result = await pokemon.getData();
 
-/* The code snippet `loadingElement.classList.add('hide');` is hiding the loading message on the
-webpage. It targets an HTML element with the class "loading" and adds the "hide" class to it. By
-adding the "hide" class, the loading message element is hidden from the user interface, effectively
-removing it from view. This action is typically performed after the data fetching or processing is
-complete, indicating that the loading process has finished and the content is ready to be displayed. */
+  /* The code snippet `loadingElement.classList.add('hide');` is hiding the loading message on the
+  webpage. It targets an HTML element with the class "loading" and adds the "hide" class to it. By
+  adding the "hide" class, the loading message element is hidden from the user interface, effectively
+  removing it from view. This action is typically performed after the data fetching or processing is
+  complete, indicating that the loading process has finished and the content is ready to be displayed. */
   // Hide loading message
   loadingElement.classList.add('hide');
 
@@ -104,11 +104,11 @@ complete, indicating that the loading process has finished and the content is re
   result.forEach(pokemon => {
     pokemon.element = pokemonContainer.querySelector(`[key='${pokemon.id}']`);
 
-   /* The code snippet you provided is adding a hover event listener to each Pokémon element in the
-   HTML. When a user hovers over a Pokémon card, this event listener triggers a function that
-   selects the element with the class "pokemon_hover_stats" inside the hovered Pokémon card and
-   removes the "hide" class from it. This action makes the additional stats section visible when the
-   user hovers over a Pokémon card. */
+    /* The code snippet you provided is adding a hover event listener to each Pokémon element in the
+    HTML. When a user hovers over a Pokémon card, this event listener triggers a function that
+    selects the element with the class "pokemon_hover_stats" inside the hovered Pokémon card and
+    removes the "hide" class from it. This action makes the additional stats section visible when the
+    user hovers over a Pokémon card. */
     // Add hover event listeners
     pokemon.element.addEventListener('mouseenter', () => {
       pokemon.element.querySelector('.pokemon_hover_stats').classList.remove('hide');
@@ -123,7 +123,7 @@ complete, indicating that the loading process has finished and the content is re
     });
   });
 
-  
+
 
   /* `let searchInput = document.querySelector('.pokemon-search');` is selecting the HTML element with
   the class "pokemon-search" from the document. This line of code is assigning the selected element
@@ -135,21 +135,23 @@ complete, indicating that the loading process has finished and the content is re
   with the class "pokemon-search". When the user types into the search input field, this event
   listener triggers a function that performs the following actions for each Pokémon in the `result`
   array: */
- /* This code snippet is adding an event listener to the `input` event on the search input element with
- the class "pokemon-search". When the user types into the search input field, this event listener
- triggers a function that iterates over each Pokémon in the `result` array. */
+  /* This code snippet is adding an event listener to the `input` event on the search input element with
+  the class "pokemon-search". When the user types into the search input field, this event listener
+  triggers a function that iterates over each Pokémon in the `result` array. */
   searchInput.addEventListener("input", e => {
     /* `const value = e.target.value.toLowerCase();` is a line of code that retrieves the current value
     entered into an input field and converts it to lowercase. Here's a breakdown of what it does: */
     const value = e.target.value.toLowerCase();
 
-   /* This code snippet is iterating over each Pokémon object in the `result` array and performing the
-   following actions for each Pokémon: */
+    /* This code snippet is iterating over each Pokémon object in the `result` array and performing the
+    following actions for each Pokémon: */
     result.forEach(pokemon => {
       const isVisible =
         pokemon.name.toLowerCase().includes(value) ||
-        pokemon.order == Number(value);
+        pokemon.order == Number(value) ||
+        pokemon.types[0].type.name.toLowerCase().includes(value)
       pokemon.element.classList.toggle("hide", !isVisible);
+       ;
     });
   });
 });

@@ -51,7 +51,7 @@ header {
 input[type="search"] {
   display: flex;
   align-items: center;
-  width: 20rem;
+  width: 25rem;
   padding: 1rem;
   /* background-color: var(--background_light_gray); */
   border-radius: 5rem;

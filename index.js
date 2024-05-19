@@ -74,7 +74,7 @@ complete, indicating that the loading process has finished and the content is re
     return `
       <div key=${item.id} class="pokemon-card">
         <h1>#${item.order}</h1>
-        <img src="${item.sprites.front_default}" alt="${item.name}">
+        <img class="pokemon_avatar" src="${item.sprites.front_default}" alt="${item.name}">
         <h2>${item.name}</h2>
         
         <p>Type: ${item.types[0].type.name}</p>
@@ -82,7 +82,8 @@ complete, indicating that the loading process has finished and the content is re
         <div  hide class="pokemon_hover_stats hide">
             <div class="stats_wrapper">
                  <p>HP: ${item.stats[0].base_stat}</p>
-        <p>HP: ${item.stats[0].base_stat}</p><img src="${item.sprites.front_default}" alt="${item.name}">
+        <p>HP: ${item.stats[0].base_stat}</p>
+        <img src="${item.sprites.front_default}" alt="${item.name}">
         <p>${item.stats[0].stat.name}: ${item.stats[0].base_stat}</p>
         <p>${item.stats[1].stat.name}: ${item.stats[1].base_stat}</p>
         <p>${item.stats[2].stat.name}: ${item.stats[2].base_stat}</p>

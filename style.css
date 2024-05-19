@@ -65,6 +65,8 @@ input[type="search"] {
   background-size: 1.5rem;
   padding-inline-start: 2.8rem;
   transition: all 0.3s ease-in-out;
+
+  
 }
 
 input[type="search"]:focus {

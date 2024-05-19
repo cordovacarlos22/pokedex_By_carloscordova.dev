@@ -45,6 +45,7 @@ main {
 
 
 .pokemon_hover_stats {
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -53,9 +54,15 @@ main {
   
 }
 
+
+
 .pokemon_hover_stats:hover {
-  background-color: black;
+  background-image: url('./src/background.jpeg');
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: cover;
+  
+
 }
 
 .hide {

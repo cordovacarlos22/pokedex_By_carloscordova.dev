@@ -80,17 +80,15 @@ addEventListener('load', async () => {
         <p>Type: ${item.types[0].type.name}</p>
     
         <div  hide class="pokemon_hover_stats hide">
-            <div class="stats_wrapper">
-                 <p>HP: ${item.stats[0].base_stat}</p>
         <p>HP: ${item.stats[0].base_stat}</p>
         <img src="${item.sprites.front_default}" alt="${item.name}">
-        <p>${item.stats[0].stat.name}: ${item.stats[0].base_stat}</p>
+        <p>Type: ${item.types[0].type.name}</p>
         <p>${item.stats[1].stat.name}: ${item.stats[1].base_stat}</p>
         <p>${item.stats[2].stat.name}: ${item.stats[2].base_stat}</p>
         <p>${item.stats[3].stat.name}: ${item.stats[3].base_stat}</p>
             <p>Height: ${item.height}</p>
         <p>Weight: ${item.weight}</p>
-          </div>
+          
         </div>
       </div>
     `;
@@ -151,7 +149,12 @@ addEventListener('load', async () => {
         pokemon.order == Number(value) ||
         pokemon.types[0].type.name.toLowerCase().includes(value)
       pokemon.element.classList.toggle("hide", !isVisible);
-       ;
+      ;
     });
   });
+  /* The code `document.addEventListener("click", x => 0)` is adding an event listener to the entire
+  document for the "click" event. When a click event occurs anywhere on the document, the provided
+  arrow function `x => 0` is executed. In this case, the arrow function simply returns 0 when
+  triggered by a click event. */
+  document.addEventListener("click", x => 0)
 });

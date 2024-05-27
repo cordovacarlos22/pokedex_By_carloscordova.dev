@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev/issues"
   },
-  "homepage": "https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev#readme"
+  "homepage": "https://github.com/cordovacarlos22/pokedex_By_carloscordova.dev#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }

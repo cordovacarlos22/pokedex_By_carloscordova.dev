@@ -152,9 +152,5 @@ addEventListener('load', async () => {
       ;
     });
   });
-  /* The code `document.addEventListener("click", x => 0)` is adding an event listener to the entire
-  document for the "click" event. When a click event occurs anywhere on the document, the provided
-  arrow function `x => 0` is executed. In this case, the arrow function simply returns 0 when
-  triggered by a click event. */
-  document.addEventListener("click", x => 0)
+  
 });
